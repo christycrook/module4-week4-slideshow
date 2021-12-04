@@ -2,28 +2,30 @@
     box-sizing:border-box
 }
 
+img {
+    vertical-align: middle;
+}
+
 /* Slideshow container */
 .slideshow-container {
-  max-width: 600px;
+  max-width: 500px;
   position: relative;
   margin: auto;
 }
 
-
-
-img {
-    vertical-align: middle;
-    height: 600px;
-}
+/* Hide the images by default 
+.mySlides {
+  display: none;
+}*/
 
 /* Next & previous buttons */
-.prevBtn, .nextBtn {
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   margin-top: -22px;
-  padding: 10px;
+  padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -33,12 +35,13 @@ img {
 }
 
 /* Position the "next button" to the right */
-.nextBtn {
+.next {
   right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prevBtn:hover, .nextBtn:hover {
+.prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
