@@ -1,29 +1,30 @@
-let slideIndex = 0;
-showSlides();
+// grabbing image id element of the image
+const poster = document.querySelector("#currentPoster")
 
-//Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+// setting the array of posters
+const images = [
+  "./images/poster1.jpg",
+  "./images/poster2.jpg",
+  "./images/poster3.jpg",
+  "./images/poster4.jpg",
+  "./images/poster5.jpg"
+];
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-} 
+let index = 0;
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+// function to get the posters to change
+function changePoster() {
+  // comparing the index and the length of the images array
+  if (index == images.length) {
+    index = 0
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  
+  // grabbing the source of attribute of poster and setting it equal to images array
+  poster.src = images[index];
+  index++;
+
+  // setting the timer and executing the function, timmer of 1000 miliseconds or 1 second
+  setTimeout(changePoster, 1000);
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000);
-} 
+
+setTimeout(changePoster, 1000);
